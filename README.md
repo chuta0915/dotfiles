@@ -34,8 +34,10 @@ dotfiles
     pbcopy < ~/.ssh/id_rsa.pub
 * open github account > SSH Keys
 * add new key, copy id_rsa.pub on the textarea.
-* try
+
+### try
     ssh -T git@github.com
+
 ## rbenv
     rbenv install --list
     rbenv install 2.0.0-p481 <-- install some version of ruby
