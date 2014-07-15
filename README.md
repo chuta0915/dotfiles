@@ -29,12 +29,12 @@ dotfiles
     :source ~/.vimrc
     :pluginInstall
 ## github
-* ssh key
+### ssh key
     ssh-keygen -t rsa -C "your_email@example.com"
     pbcopy < ~/.ssh/id_rsa.pub
-** open github account > SSH Keys
-** add new key, copy id_rsa.pub on the textarea.
-** try
+* open github account > SSH Keys
+* add new key, copy id_rsa.pub on the textarea.
+* try
     ssh -T git@github.com
 ## rbenv
     rbenv install --list
