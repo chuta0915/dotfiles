@@ -2,11 +2,14 @@ syntax on
 colorscheme desert
 set nocompatible
 set number
-"filetype on
+set ruler
+filetype off
+
 autocmd FileType c,cpp,perl,rb,php,html,erl set cindent
 autocmd FileType python set tabstop=2 shiftwidth=2 expandtab
 set autoindent
 set shiftwidth=2
+set tabstop=2
 set expandtab
 set backup
 set enc=utf-8
@@ -37,36 +40,42 @@ nmap ss <Plug>Ysurround
 "***************
 filetype off
  
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+" set rtp+=~/.vim/vundle.git/
+" call vundle#rc()
+" Bundle 'gmarik/vundle'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
  
+Plugin 'gmarik/vundle'
 " vim-scripts リポジトリ (1)
-"Bundle "rails.vim"
+"Plugin "rails.vim"
  
 " github の任意のリポジトリ (2)
-"Bundle "tpope/vim-fugitive"
+"Plugin "tpope/vim-fugitive"
  
 " github 以外のリポジトリ (3)
-Bundle "git://git.wincent.com/command-t.git"
+"Plugin "git://git.wincent.com/command-t.git"
 
 " Ruby使いにおすすめらしい http://iiidevelop.blogspot.jp/2011/07/vimvundle.html
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
+Plugin 'Shougo/neocomplcache'
+Plugin 'Shougo/unite.vim'
+Plugin 'thinca/vim-ref'
+Plugin 'thinca/vim-quickrun'
 
 "Ruby
-Bundle 'rails.vim'
+Plugin 'rails.vim'
 
 "Html
-Bundle 'mattn/zencoding-vim'
+Plugin 'mattn/zencoding-vim'
 
 "Surround 
-Bundle "tpope/vim-surround"
+"Plugin "tpope/vim-surround"
 
 "show tree directory
-Bundle 'The-NERD-tree'
+Plugin 'The-NERD-tree'
 
+call vundle#end()
 filetype plugin indent on
 syntax enable
 

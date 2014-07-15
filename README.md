@@ -7,14 +7,24 @@ dotfiles
 # Setup
 ## xcode
 * install from AppStore
-* xcode-select —install
+* install command tool
+    xcode-select --install
 
 ## git
-* git --version
+    git --version
 
 ## homebrew
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     brew doctor
+    brew bundle
+** [homebrew-cask $B$N;H$$J}(B][http://qiita.com/ryurock/items/1432578d364985f6cb06] 
 ## zsh
 * oh-my-zsh
-* 
+** modify .zshrc if need. (this dotfile include the setting)
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
+* .zshrc
+    resource ~/.zshrc
+## vim
+* .vimrc
+    :source ~/.vimrc
+    :pluginInstall

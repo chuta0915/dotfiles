@@ -46,3 +46,5 @@ cask install speedlimit || true
 cask install colors || true
 cask install sitesucker || true
 cask install google-japanese-ime || true
+# add from Jul 2014
+cask install heroku-toolbelt || true
