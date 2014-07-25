@@ -1,0 +1,8 @@
+[user]
+	email = tomoyasu0620@gmail.com
+	name = T.Ishii
+[core]
+  excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	cm = commit

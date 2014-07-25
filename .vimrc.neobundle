@@ -1,0 +1,127 @@
+"***************
+"vundle setting
+"***************
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+" Ruby使いにおすすめらしい http://iiidevelop.blogspot.jp/2011/07/vimvundle.html
+NeoBundle 'Shougo/neocomplcache.vim'
+" 補完ウィンドウの設定
+set completeopt=menuone
+ 
+" 起動時に有効化
+let g:neocomplcache_enable_at_startup = 1
+ 
+" 大文字が入力されるまで大文字小文字の区別を無視する
+let g:neocomplcache_enable_smart_case = 1
+ 
+" _(アンダースコア)区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+ 
+let g:neocomplcache_enable_camel_case_completion  =  1
+ 
+" ポップアップメニューで表示される候補の数
+let g:neocomplcache_max_list = 20
+ 
+" シンタックスをキャッシュするときの最小文字長
+let g:neocomplcache_min_syntax_length = 3
+ 
+" ディクショナリ定義
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'php' : $HOME . '/.vim/dict/php.dict',
+    \ 'ctp' : $HOME . '/.vim/dict/php.dict'
+    \ }
+ 
+if !exists('g:neocomplcache_keyword_patterns')
+          let g:neocomplcache_keyword_patterns = {}
+        endif
+        let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+         
+        " スニペットを展開する。スニペットが関係しないところでは行末まで削除
+        imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
+        smap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
+         
+        " 前回行われた補完をキャンセルします
+        inoremap <expr><C-g> neocomplcache#undo_completion()
+         
+        " 補完候補のなかから、共通する部分を補完します
+        inoremap <expr><C-l> neocomplcache#complete_common_string()
+         
+        " 改行で補完ウィンドウを閉じる
+        " inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+        " Recommended key-mappings.
+        " <CR>: close popup and save indent.
+        inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+        function! s:my_cr_function()
+          " return neocomplcache#smart_close_popup() . "\<CR>"
+          " For no inserting <CR> key.
+          return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+        endfunction
+         
+        "tabで補完候補の選択を行う
+        inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
+        inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
+         
+        " <C-h>や<BS>を押したときに確実にポップアップを削除します
+        inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
+         
+        " 現在選択している候補を確定します
+        inoremap <expr><Space> neocomplcache#close_popup()."\<Space>"
+         
+        " 現在選択している候補をキャンセルし、ポップアップを閉じます
+        inoremap <expr><C-e> neocomplcache#cancel_popup()
+
+        " Enable omni completion.
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+
+"Ruby
+NeoBundle 'rails.vim'
+  " custom setting
+  " http://qiita.com/y_uuki/items/57e726312ffe47592867
+  autocmd User Rails Rnavcommand config config   -glob=*.*  -suffix= -default=routes.rb
+  autocmd User Rails nmap :<C-u>Rcontroller :<C-u>Rc
+  autocmd User Rails nmap :<C-u>Rmodel :<C-u>Rm
+  autocmd User Rails nmap :<C-u>Rview :<C-u>Rv
+  " gf - カーソル位置のシンボルに応じて定義元へジャンプ（デフォルト設定）
+
+"Html
+NeoBundle 'mattn/emmet-vim'
+
+"Surround 
+"NeoBundle "tpope/vim-surround"
+
+"show tree directory
+NeoBundle 'The-NERD-tree'
+
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+

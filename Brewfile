@@ -14,11 +14,15 @@ install curl || true
 install wget || true
 install dnsmasq || true
 install composer || true
+install mysql || true
 # Development
 install rbenv || true
 install ruby-build || true
 install rbenv-gemset || true
 # Cask Packages
+# Step:
+#   brew cask search ~
+#   brew cask install ~
 cask install iterm2 || true
 cask install alfred || true
 cask install dash || true
@@ -48,3 +52,4 @@ cask install sitesucker || true
 cask install google-japanese-ime || true
 # add from Jul 2014
 cask install heroku-toolbelt || true
+cask install sqlite-database-browser || true
