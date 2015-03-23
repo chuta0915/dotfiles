@@ -18,6 +18,14 @@ dotfiles
     brew doctor
     brew bundle
 ** [homebrew-cask $B$N;H$$J}(B][http://qiita.com/ryurock/items/1432578d364985f6cb06] 
+
+DB自動起動の設定
+```
+ln -fs /usr/local/opt/mysql/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
+ln -fs /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist ~/Library/LaunchAgents/
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+```
+
 ## zsh
 ### oh-my-zsh
 ** modify .zshrc if need. (this dotfile include the setting)
