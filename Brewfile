@@ -1,3 +1,5 @@
+cask_args appdir: '/Applications'
+
 # homebrew&cask
 tap 'caskroom/cask'
 tap 'homebrew/binary'
@@ -60,6 +62,7 @@ cask skitch
 cask evernote
 cask dropbox
 cask skype
+cask slack
 cask sourcetree
 cask mysqlworkbench
 cask sequel-pro
@@ -70,6 +73,7 @@ cask virtualbox
 cask vagrant
 cask sublime-text
 cask phpstorm
+cask psequel
 cask eclipse-ide
 cask cyberduck
 cask the-unarchiver
@@ -85,6 +89,3 @@ cask sqlite-database-browser
 # editor
 cask visual-studio-code
 cask atom
-
-# communication
-cask slack
