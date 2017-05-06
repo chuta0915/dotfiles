@@ -2,6 +2,9 @@ syntax on
 colorscheme desert
 set nocompatible
 set number
+set enc=utf-8
+set fenc=utf-8
+set fencs=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 filetype off
 
 " *********************************
@@ -22,9 +25,6 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set backup
-set enc=utf-8
-set fenc=utf-8
-set fencs=iso-2022-jp,euc-jp,cp932,sjis,utf-8
 set backspace=indent,eol,start
 
 set ignorecase
@@ -41,8 +41,6 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-noremap ; :
-noremap : ;
 nnoremap nt :NERDTreeToggle<CR>
 nmap ss <Plug>Ysurround
 

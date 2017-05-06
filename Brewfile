@@ -1,55 +1,90 @@
-# Add Repository
-tap homebrew/versions || true
-tap phinze/homebrew-cask || true
-tap homebrew/binary || true
-# Brew Update
-update || true
-# Brew Cask
-install brew-cask || true
-# Packages
-install --disable-etcdir zsh || true
-install vim || true
-install jq || true
-install curl || true
-install wget || true
-install dnsmasq || true
-install composer || true
-install mysql || true
-# Development
-install rbenv || true
-install ruby-build || true
-install rbenv-gemset || true
+# homebrew&cask
+tap 'caskroom/cask'
+tap 'homebrew/binary'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/versions'
+tap 'rcmdnk/file'
+
+# package
+brew 'autoconf'
+brew 'awscli'
+brew 'bison'
+brew 'libpng'
+brew 'freetype'
+brew 'fontconfig'
+brew 'gettext'
+brew 'libffi'
+brew 'pcre'
+brew 'glib'
+brew 'pixman'
+brew 'cairo'
+brew 'curl'
+brew 'dnsmasq'
+brew 'gdbm'
+brew 'giflib'
+brew 'hub'
+brew 'jpeg'
+brew 'libtiff'
+brew 'libtool'
+brew 'xz'
+
+# development
+brew 'imagemagick'
+brew 'jq'
+brew 'mongodb'
+brew 'mysql'
+brew 'node'
+brew 'readline'
+brew 'postgresql'
+brew 'qt'
+brew 'ruby-build'
+brew 'rbenv'
+brew 'rbenv-gemset'
+brew 'redis'
+brew 'tree'
+brew 'vim'
+brew 'wget'
+brew 'yarn'
+brew 'zsh', args: ['without-etcdir']
+brew 'rcmdnk/file/brew-file'
+
 # Cask Packages
 # Step:
 #   brew cask search ~
-#   brew cask install ~
-cask install iterm2 || true
-cask install alfred || true
-cask install dash || true
-cask install skitch || true
-cask install evernote || true
-cask install dropbox || true
-cask install skype || true
-cask install sourcetree || true
-cask install mysqlworkbench || true
-cask install sequel-pro || true
-cask install firefox || true
-cask install google-chrome || true
-cask install yorufukurou || true
-cask install kobito || true
-cask install virtualbox || true
-cask install vagrant || true
-cask install sublime-text || true
-cask install phpstorm || true
-cask install eclipse-ide || true
-cask install unity3d || true
-cask install cyberduck || true
-cask install the-unarchiver || true
-cask install imageoptim || true
-cask install speedlimit || true
-cask install colors || true
-cask install sitesucker || true
-cask install google-japanese-ime || true
+#   brew cask install~
+cask iterm2
+cask alfred
+cask dash
+cask skitch
+cask evernote
+cask dropbox
+cask skype
+cask sourcetree
+cask mysqlworkbench
+cask sequel-pro
+cask firefox
+cask google-chrome
+cask kobito
+cask virtualbox
+cask vagrant
+cask sublime-text
+cask phpstorm
+cask eclipse-ide
+cask cyberduck
+cask the-unarchiver
+cask imageoptim
+cask speedlimit
+cask colors
+cask sitesucker
+cask google-japanese-ime
 # add from Jul 2014
-cask install heroku-toolbelt || true
-cask install sqlite-database-browser || true
+cask heroku-toolbelt
+cask sqlite-database-browser
+
+# editor
+cask visual-studio-code
+cask atom
+
+# communication
+cask slack

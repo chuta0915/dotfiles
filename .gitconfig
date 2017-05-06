@@ -2,7 +2,25 @@
 	email = tomoyasu0620@gmail.com
 	name = T.Ishii
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/tishii/.gitignore
+	editor = vim
 [alias]
 	co = checkout
 	cm = commit
+  pr = pull-request
+  s  = status
+  ss = status -s
+  sh = show
+  alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+  st = log --graph --branches --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  drag = pull --rebase
+  refresh= !git fetch origin && git remote prune origin
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[heroku]
+	account = tishii

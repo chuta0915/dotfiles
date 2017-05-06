@@ -1,3 +1,6 @@
+# Homebrew
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -92,5 +95,8 @@ fi
 	      fi
 	    }
 
+# hub command is set to git     
+function git(){hub "$@"}
+      
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
