@@ -57,6 +57,7 @@ brew 'rcmdnk/file/brew-file'
 #   brew cask install~
 cask 'iterm2'
 cask 'alfred'
+cask 'caffeine'
 cask 'dash'
 cask 'skitch'
 cask 'evernote'
