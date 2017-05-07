@@ -14,11 +14,9 @@ dotfiles
     git --version
 
 ## homebrew
-'''
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-brew doctor
-brew bundle
-'''
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    brew doctor
+    brew bundle
 * [about Homebrew-cask][http://qiita.com/ryurock/items/1432578d364985f6cb06] 
 
 DB自動起動の設定
@@ -54,7 +52,7 @@ ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
     rbenv global 2.0.0-p481
     rbenv versions
     rbenv gemset create 2.0.0-p481 sample
-    cd $B9%$-$J%G%#%l%/%H%j$X0\F0(B
+    cd xxx
     echo sample > .rbenv-gemsets
     rbenv gemset active
 
