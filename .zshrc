@@ -11,8 +11,12 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# "~hoge" が特定のパス名に展開されるようにする（ブックマークのようなもの）
+# 例： cd ~hoge と入力すると /long/path/to/hogehoge ディレクトリに移動
+#hash -d hoge=/long/path/to/hogehoge
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
